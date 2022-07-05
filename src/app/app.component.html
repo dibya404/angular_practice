@@ -1,0 +1,157 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand bg-light">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="d-flex justify-content-between collapse navbar-collapse mx-3"
+      id="navbarTogglerDemo01"
+    >
+      <!-- Sidebar Button -->
+      <button
+        class="btn btn-outline-primary"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        Sidebar
+      </button>
+      <a class="navbar-brand" href="#">E-Swift</a>
+      <button class="btn btn-outline-danger">Log Out</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar Snippet -->
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title ms-3" id="offcanvasExampleLabel">Menu</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="ps-3">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Home</li>
+      <li class="list-group-item">Discussion</li>
+      <li class="list-group-item">About</li>
+      <li class="list-group-item">Demo</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Input Box -->
+<form
+  class="d-md-flex mx-3 my-5"
+  [formGroup]='formValue'
+  (ngSubmit)="onSubmit()"
+>
+  <input
+    type="text"
+    class="form-control mx-1 mt-3"
+    placeholder="Country Name"
+    formControlName="countryName"
+  />
+  <input
+    type="text"
+    class="form-control mx-1 mt-3"
+    placeholder="Currency Name"
+    formControlName="currencyName"
+  />
+  <input
+    type="text"
+    class="form-control mx-1 mt-3"
+    placeholder="Currency Code"
+    formControlName="currencyCode"
+  />
+  <input
+    type="text"
+    class="form-control mx-1 mt-3"
+    placeholder="Create By"
+    formControlName="currencyCode"
+  />
+  <input
+    type="text"
+    class="form-control mx-1 mt-3"
+    placeholder="Update By"
+    formControlName="currencyCode"
+  />
+  <!-- radio buttons -->
+  <div class="d-flex">
+    <div class="form-check d-flex align-items-center radio-btn mt-3 mx-1">
+    
+    <input
+      class="form-check-input me-1"
+      type="radio"
+      id="flexRadioDefault1"
+      value="Active"
+      formControlName="activeStat"
+    /> 
+    <label class="form-check-label" for="flexRadioDefault1">
+      Active
+    </label>
+  </div>
+  <div class="form-check d-flex align-items-center radio-btn mt-3 mx-1">
+    <input
+      class="form-check-input me-1"
+      type="radio"
+      id="flexRadioDefault2"
+      value="Inactive"
+      formControlName="activeStat"
+    /> 
+    <label #flexRadioDefault1 class="form-check-label" for="flexRadioDefault2">
+      Inactive
+    </label>
+  </div>
+  </div>
+  <button type="submit" class="btn btn-primary mx-1 mx-lg-3 mt-4 mt-md-3">
+    Submit
+  </button>
+</form>
+
+<!-- table -->
+<div class="container-fluid table-top">
+  <table class="table table-striped">
+    <thead>
+      <tr >
+        <th scope="col" class="text-center">Country Name</th>
+        <th scope="col" class="text-center">Currency Name</th>
+        <th scope="col" class="text-center">Currency Code</th>
+        <th scope="col" class="text-center">Active Status</th>
+        <th scope="col" class="text-center">Create By</th>
+        <th scope="col" class="text-center">Create Date</th>
+        <th scope="col" class="text-center">Update By</th>
+        <th scope="col" class="text-center">Update Date</th>
+        <th scope="col" class="text-center">Error Number</th>
+        <th scope="col" class="text-center">Error Message</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = 'let row of curData'>
+        <td scope="row" class="text-center">{{row.coName}}</td>
+        <td class="text-center">{{row.cuName}}</td>
+        <td class="text-center">{{row.cuCode}}</td>
+        <td class="text-center">{{row.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
