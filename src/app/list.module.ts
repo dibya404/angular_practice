@@ -4,5 +4,8 @@ export class listmodel{
   cuName: string = "";
   cuCode: string = "";
   status: string = "";
+  createBy: string = "";
+  updateBy: any = "";
+  curDate :  any= "";
 
 }

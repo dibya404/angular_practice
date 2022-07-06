@@ -19,6 +19,10 @@ export class CurrencyService {
   {
     return this.http.get<any>(this.url)
   }
+  DeletetData(id:number)
+  {
+    return this.http.delete<any>("http://localhost:3000/posts/"+id)
+  }
 
   
 }

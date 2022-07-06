@@ -86,13 +86,13 @@
     type="text"
     class="form-control mx-1 mt-3"
     placeholder="Create By"
-    formControlName="currencyCode"
+    formControlName="createBy"
   />
   <input
     type="text"
     class="form-control mx-1 mt-3"
     placeholder="Update By"
-    formControlName="currencyCode"
+    formControlName="updateBy"
   />
   <!-- radio buttons -->
   <div class="d-flex">
@@ -142,15 +142,23 @@
         <th scope="col" class="text-center">Update Date</th>
         <th scope="col" class="text-center">Error Number</th>
         <th scope="col" class="text-center">Error Message</th>
+        
 
       </tr>
     </thead>
     <tbody>
       <tr *ngFor = 'let row of curData'>
-        <td scope="row" class="text-center">{{row.coName}}</td>
+        <td scope="row" class="text-center">{{row.coName}} </td>
         <td class="text-center">{{row.cuName}}</td>
         <td class="text-center">{{row.cuCode}}</td>
         <td class="text-center">{{row.status}}</td>
+        <td class="text-center">{{row.createBy}}</td>
+        <td class="text-center">{{row.curDate}}</td>
+        <td class="text-center">{{row.updateBy}}</td>
+        <td><button (click)="delData(row)" type="submit" class="btn btn-primary mx-1 mx-lg-3 mt-4 mt-md-3">
+         Delete
+        </button></td>
+       
       </tr>
     </tbody>
   </table>
