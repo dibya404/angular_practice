@@ -6,6 +6,7 @@ import { DatePipe } from '@angular/common';
 import { Parameters } from './parameters';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,8 +21,8 @@ export class AppComponent {
   
  
   
-  //listModelObj : listmodel = new listmodel();
-  paramobj : Parameters = new Parameters();
+//paramobj : listmodel = new listmodel();
+ paramobj : Parameters = new Parameters();
   curData : any;
   formValue !: FormGroup;
 
@@ -58,7 +59,7 @@ ngOnInit()
     this.paramobj.cuCode = this.formValue.value.currencyCode;
     this.paramobj.status = this.formValue.value.activeStat;
     this.paramobj.createBy = this.formValue.value.createBy;
-    //this.listModelObj.curDate = this.formValue.value.currentDateTime;
+    //this.paramobj.curDate = this.formValue.value.currentDateTime;
     this.paramobj.updateBy = this.formValue.value.updateBy;
     this.currency.CurrencyDataShowService(this.paramobj)
     .subscribe(res =>{console.log(res);

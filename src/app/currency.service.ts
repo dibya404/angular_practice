@@ -19,9 +19,9 @@ export class CurrencyService {
   //   .pipe(catchError(this.handleError));
   // }
 
-  CurrencyDataShowService(params: Parameters): Observable<any> {
+  CurrencyDataShowService(params: any): Observable<any> {
     console.log();
-    return this.httpClient.post(`${JPA_API_URL}/e-swift/mtCatagoryEntry`, params)
+    return this.httpClient.post(`${JPA_API_URL}/e-swift/currencyCrud`, params)
     .pipe(catchError(this.handleError));
   }
 
