@@ -1,4 +1,5 @@
 <!-- Navbar -->
+
 <nav class="navbar navbar-expand bg-light">
   <div class="container-fluid">
     <button
@@ -147,6 +148,7 @@
       </tr>
     </thead>
     <tbody>
+      
       <tr *ngFor = 'let row of curData'>
         <td scope="row" class="text-center">{{row.coName}} </td>
         <td class="text-center">{{row.cuName}}</td>
@@ -155,9 +157,9 @@
         <td class="text-center">{{row.createBy}}</td>
         <td class="text-center">{{row.curDate}}</td>
         <td class="text-center">{{row.updateBy}}</td>
-        <td><button (click)="delData(row)" type="submit" class="btn btn-primary mx-1 mx-lg-3 mt-4 mt-md-3">
+        <!-- <td><button (click)="delData(row)" type="submit" class="btn btn-primary mx-1 mx-lg-3 mt-4 mt-md-3">
          Delete
-        </button></td>
+        </button></td> -->
        
       </tr>
     </tbody>

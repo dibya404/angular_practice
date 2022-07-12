@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+//import { Parameters } from './parameters';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,

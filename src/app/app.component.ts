@@ -3,6 +3,7 @@ import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
 import { listmodel } from './list.module';
 import { CurrencyService } from './currency.service';
 import { DatePipe } from '@angular/common';
+import { Parameters } from './parameters';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class AppComponent {
   
  
   
-  listModelObj : listmodel = new listmodel();
+  //listModelObj : listmodel = new listmodel();
+  paramobj : Parameters = new Parameters();
   curData : any;
   formValue !: FormGroup;
 
@@ -39,9 +41,10 @@ ngOnInit()
     activeStat: [''],
     createBy : [''],
     updateBy : [''],
-   
+    
     
   });
+  //this.getAllData();
 }
 
   
@@ -49,35 +52,50 @@ ngOnInit()
   onSubmit() {
     // console.log(this.currencyForm.value);
     // console.log(this.currencyForm.value.countryName);
-    this.listModelObj.curDate =this.datepipe.transform((new Date), 'MM/dd/yyyy h:mm:ss')
-    this.listModelObj.coName = this.formValue.value.countryName;
-    this.listModelObj.cuName = this.formValue.value.currencyName;
-    this.listModelObj.cuCode = this.formValue.value.currencyCode;
-    this.listModelObj.status = this.formValue.value.activeStat;
-    this.listModelObj.createBy = this.formValue.value.createBy;
+    this.paramobj.curDate =this.datepipe.transform((new Date), 'MM/dd/yyyy h:mm:ss')
+    this.paramobj.coName = this.formValue.value.countryName;
+    this.paramobj.cuName = this.formValue.value.currencyName;
+    this.paramobj.cuCode = this.formValue.value.currencyCode;
+    this.paramobj.status = this.formValue.value.activeStat;
+    this.paramobj.createBy = this.formValue.value.createBy;
     //this.listModelObj.curDate = this.formValue.value.currentDateTime;
-    this.listModelObj.updateBy = this.formValue.value.updateBy;
-    this.currency.PostData(this.listModelObj)
+    this.paramobj.updateBy = this.formValue.value.updateBy;
+    this.currency.CurrencyDataShowService(this.paramobj)
     .subscribe(res =>{console.log(res);
     alert("added");
     }/*,
     err=> {alert("wrong");}*/)
     this.formValue.reset();
-    this.getAllData();
+    //this.getAllData();
     
   }
-  getAllData(){
-    this.currency.GetData()
-    .subscribe(res=>{
-      this.curData = res;
-    })
-  }
-  delData(row :any)
-  {
-    this.currency.DeletetData(row.id)
-    .subscribe(res=>{
-      this.curData = res;
-    })
-    alert("deleted");
-  }
 }
+//   getAllData(){
+//     this.currency.GetData()
+//     .subscribe(res=>{
+//       this.curData = res;
+//     })
+//   }
+//   delData(row :any)
+//   {
+//     this.currency.DeletetData(row.id)
+//     .subscribe(res=>{
+//       this.curData = res;
+//     })
+//     alert("deleted");
+//     this.getAllData();
+//   }
+// }
+
+// // get=getCurrencyDataShow
+// // post=currencyCurd
+// // currencyCode; //currency_code
+// // currencyName; //currency_name
+// // countryName; //country_name
+// // activeFlag;  //active_flag
+// // createBy;  //create_by
+// // createDate;  //create_date
+// // updateBy; //update_by
+// // updateDate;  //update_date
+// // errorNum=0;    //out pare
+ // errorMsg  = "";
