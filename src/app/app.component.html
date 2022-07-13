@@ -103,7 +103,7 @@
       class="form-check-input me-1"
       type="radio"
       id="flexRadioDefault1"
-      value="Active"
+      value="Y"
       formControlName="activeStat"
     /> 
     <label class="form-check-label" for="flexRadioDefault1">
@@ -115,7 +115,7 @@
       class="form-check-input me-1"
       type="radio"
       id="flexRadioDefault2"
-      value="Inactive"
+      value="N"
       formControlName="activeStat"
     /> 
     <label #flexRadioDefault1 class="form-check-label" for="flexRadioDefault2">
@@ -147,21 +147,21 @@
 
       </tr>
     </thead>
-    <tbody>
+    <!-- <tbody>
       
       <tr *ngFor = 'let row of curData'>
-        <td scope="row" class="text-center">{{row.coName}} </td>
-        <td class="text-center">{{row.cuName}}</td>
-        <td class="text-center">{{row.cuCode}}</td>
-        <td class="text-center">{{row.status}}</td>
-        <td class="text-center">{{row.createBy}}</td>
-        <td class="text-center">{{row.curDate}}</td>
-        <td class="text-center">{{row.updateBy}}</td>
+        <td scope="row" class="text-center">{{row.country_name}} </td>
+        <td class="text-center">{{row.currency_name}}</td>
+        <td class="text-center">{{row.currency_code}}</td>
+        <td class="text-center">{{row.active_flag}}</td>
+        <td class="text-center">{{row.create_by}}</td>
+        <td class="text-center">{{row.create_date}}</td>
+        <td class="text-center">{{row.update_by}}</td>
         <!-- <td><button (click)="delData(row)" type="submit" class="btn btn-primary mx-1 mx-lg-3 mt-4 mt-md-3">
          Delete
         </button></td> -->
        
-      </tr>
-    </tbody>
+      <!-- </tr>
+    </tbody> --> 
   </table>
 </div>

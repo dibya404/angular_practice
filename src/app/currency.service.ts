@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CurrencyService {
-  httpClient: any;
+  //httpClient: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
   // CurrencyInsertUpdateService(params: Parameters): Observable<any> {
   //   console.log();
@@ -19,9 +19,9 @@ export class CurrencyService {
   //   .pipe(catchError(this.handleError));
   // }
 
-  CurrencyDataShowService(params: any): Observable<any> {
+  CurrencyDataShowService(params: Parameters): Observable<any> {
     console.log();
-    return this.httpClient.post(`${JPA_API_URL}/e-swift/currencyCrud`, params)
+    return this.httpClient.post(`${JPA_API_URL}/e-swift/currencyCurd`, params)
     .pipe(catchError(this.handleError));
   }
 
