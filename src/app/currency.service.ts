@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import {HttpClient}  from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders}  from '@angular/common/http';
+import { throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import { Parameters } from 'src/app/parameters';
 import { JPA_API_URL } from 'src/app/app.constants';
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +21,28 @@ export class CurrencyService {
   //   .pipe(catchError(this.handleError));
   // }
 
+  
+
+
+  // CurrencyDataShowService(params: any){
+  //   console.log("helllo");
+
+  //     return this.httpClient.post<any>(JPA_API_URL+'/e-swift/currencyCurd', params)
+  //       .pipe(catchError(this.handleError));     
+  // }
+   
+
   CurrencyDataShowService(params: Parameters): Observable<any> {
-    console.log();
-    return this.httpClient.post(`${JPA_API_URL}/e-swift/currencyCurd`, params)
-    .pipe(catchError(this.handleError));
+    console.log("helllo");
+
+      return this.httpClient.post(`${JPA_API_URL}/e-swift/currencyCurd`, params)
+    .pipe(catchError(this.handleError));     
   }
 
-  handleError(handleError: any): any {
-    throw new Error('Method not implemented.');
+   handleError(handleError: HttpErrorResponse) {
+
+    console.log("at handle error", handleError );
+    return throwError('Method not implemented.');
   }
 
   // PostData(data :any){
@@ -39,7 +55,7 @@ export class CurrencyService {
   // url  = 'http://localhost:3000/posts';
 
   // GetData(){
-  //   return this.http.get<any>(this.url)
+  //   return this.httpClient.get<Parameters[]>(JPA_API_URL+'/e-swift/getCurrencyDataShow');
   // }
 
   // DeletetData(id:number){

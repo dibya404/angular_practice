@@ -6,18 +6,20 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { LoginComponent } from './login/login.component';
 //import { Parameters } from './parameters';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, 
     FormsModule,
     HttpClientModule
   ],

@@ -27,7 +27,9 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/htaccess",
+              "src/cat-picks/**/*"
             ],
             "styles": [
               "src/styles.css"
@@ -72,9 +74,11 @@
           "configurations": {
             "production": {
               "browserTarget": "currency_name_input:build:production"
+              
             },
             "development": {
               "browserTarget": "currency_name_input:build:development"
+             
             }
           },
           "defaultConfiguration": "development"

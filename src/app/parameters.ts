@@ -6,7 +6,11 @@ export class Parameters{
     active_flag: string = "";
     create_by: string = "";
     update_by: any = "";
-    create_date :  any= "";
+    create_date :  any=  "";
     update_date : any = "";
   
+  }
+  export class loginParams{
+    email: string = '';
+    password: string = '';
   }
